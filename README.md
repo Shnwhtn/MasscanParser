@@ -1,0 +1,2 @@
+# MasscanParser
+Masscan Header Parser
