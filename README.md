@@ -6,7 +6,7 @@ This script is designed to parse through [masscan](https://github.com/robertdavi
 - ProgressBar - from [PyPi] (https://pypi.python.org/pypi/progressbar33)
 - masscan - from [masscan](https://github.com/robertdavidgraham/masscan)
 
-##Banner checking
+## Banner checking
 
 Below is from the documentation from the masscan documentation when you are not able to grab banners
 
