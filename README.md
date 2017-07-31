@@ -1,14 +1,14 @@
 # MasscanParser
-This script is designed to parse through [masscan](https://github.com/robertdavidgraham/masscan) xml outputs and then creates a IP:Port lists based on filters
+This script is designed to parse through [masscan](https://github.com/robertdavidgraham/masscan) xml outputs and then creates a IP:Port lists based on filters.
 
 ## Requirements
+- Linux OS - from (http://distrowatch.com)
 - Python 3 - from (https://python.org)
-- ProgressBar - from [PyPi] (https://pypi.python.org/pypi/progressbar33)
 - masscan - from [masscan](https://github.com/robertdavidgraham/masscan)
 
 ## Banner checking
 
-Below is from the documentation from the masscan documentation when you are not able to grab banners
+Below is from the documentation from the [masscan](https://github.com/robertdavidgraham/masscan) documentation when you are not able to grab banners
 
 Masscan can do more than just detect whether ports are open. It can also complete the TCP connection and interaction with the application at that port in order to grab simple "banner" information.
 
@@ -38,11 +38,24 @@ Run [masscan](https://github.com/robertdavidgraham/masscan) -p80 10.0.0.0/8 -oX 
 
 Then use this script to parser the input file file
 
-python ParseMyList.py <input file>
+python ParseMyList.py scan.xml
 
 This will create an output.txt file with IP:Port, Example
 
 10.0.0.3:80
+
 10.0.0.36:80
+
 10.0.0.41:80
 
+## Bugs
+
+Report them [here](https://github.com/bleedingangl/MasscanParser/issues/new)
+
+## Working (Out the Box)
+
+This script works "out of the box" on [Manjaro 17.0.2 x86_x64](https://manjaro.org/) but first install Masscan via Terminal
+
+pacman -S masscan
+
+Next step is to take a look at ""Banner checking"" on the top of this page or [masscan gitgub](https://github.com/robertdavidgraham/masscan)
