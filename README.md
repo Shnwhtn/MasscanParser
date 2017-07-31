@@ -16,19 +16,19 @@ The problem with this is that masscan contains its own TCP/IP stack separate fro
 
 The easiest way to prevent this is to assign masscan a separate IP address. This would look like the following:
 
-### masscan 10.0.0.0/8 -p80 --banners --source-ip 192.168.1.200
+#### masscan 10.0.0.0/8 -p80 --banners --source-ip 192.168.1.200
 
 The address you choose has to be on the local subnet and not otherwise be used by another system.
 
 In some cases, such as WiFi, this isn't possible. In those cases, you can firewall the port that masscan uses. This prevents the local TCP/IP stack from seeing the packet, but masscan still sees it since it bypasses the local stack. For Linux, this would look like:
 
-### iptables -A INPUT -p tcp --dport 60000 -j DROP
-### masscan 10.0.0.0/8 -p80 --banners --source-port 60000
+#### iptables -A INPUT -p tcp --dport 60000 -j DROP
+#### masscan 10.0.0.0/8 -p80 --banners --source-port 60000
 
 On Mac OS X and BSD, it might look like this:
 
-### sudo ipfw add 1 deny tcp from any to any 60000 in
-### masscan 10.0.0.0/8 -p80 --banners --source-port 60000
+#### sudo ipfw add 1 deny tcp from any to any 60000 in
+#### masscan 10.0.0.0/8 -p80 --banners --source-port 60000
 
 Windows doesn't respond with RST packets, so neither of these techniques are necessary. However, masscan is still designed to work best using its own IP address, so you should run that way when possible, even when its not strictly necessary.
 
