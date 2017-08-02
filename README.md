@@ -2,7 +2,6 @@
 This script is designed to parse through [masscan](https://github.com/robertdavidgraham/masscan) xml outputs and then creates a IP:Port lists based on filters.
 
 ## Requirements
-- Linux OS - from (http://distrowatch.com)
 - Python 3 - from (https://python.org)
 - masscan - from [masscan](https://github.com/robertdavidgraham/masscan)
 
@@ -38,7 +37,7 @@ Run [masscan](https://github.com/robertdavidgraham/masscan) -p80 10.0.0.0/8 -oX 
 
 Then use this script to parser the input file file
 
-python ParseMyList.py scan.xml
+python ParseMyList.py <input file>
 
 This will create an output.txt file with IP:Port, Example
 
