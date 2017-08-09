@@ -1,4 +1,7 @@
-# MasscanParser
+[MasscanParser](https://github.com/bleedingangl)
+
+## Description
+
 This script is designed to parse through [masscan](https://github.com/robertdavidgraham/masscan) xml outputs and then creates a IP:Port lists based on filters.
 
 ## Requirements
